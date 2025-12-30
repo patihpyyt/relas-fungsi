@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Grafik</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.3.0/math.min.js"></script>
+    <script src="kodeprogram_js/kalkulator.js"></script>
+</head>
+<body>
+
+<nav>
+    <h1>LATIHAN SOAL</h1>
+    <div class="link">
+        <a href="index.html">Materi</a>
+        <a href="pembelajaran.html">Pembelajaran</a>
+        <a href="grafik.html">Kalkulator</a>
+        <a href="kuis.html">Kuis</a>
+    </div>
+</nav>
+
+<section>
+<div class="kuis">
+    <div class="kuis-content">
+        <h2>Latihan Soal</h2>
+        <p id="judulSoal">Sebuah grafik berbentuk parabola terbuka keatas dan melalui titik (0, 0)</p>
+        <img src="image/soal3.png" class="polinomial">
+        <p style="color: aliceblue;">Fungsi yang sesuai dengan grafik tersebut adalah...</p>
+
+        <div id="pilihan">
+            <button onclick="cekJawaban('A', this)">A. y = x</button>
+            <button onclick="cekJawaban('B', this)">B. y = x²</button>
+            <button onclick="cekJawaban('C', this)">C. y = −x²</button>
+            <button onclick="cekJawaban('D', this)">D. y = 2x</button>
+        </div>
+        <div id="feedback"></div>
+
+        <button class="btn2" id="btnNext" onclick="soalBerikutnya()">Soal Berikutnya</button>
+        <button class="btn2" onclick="soalSebelumnya()">Soal Sebelumnya</button>
+    </div>
+</div>
+<script>
+  let skor =Number(localStorage.getItem("skor")) || 0;
+  const jawabanBenar = "B";
+  let sudahJawab = false;
+
+  function cekJawaban(jawaban, tombol) {
+    if (sudahJawab) return;
+    sudahJawab = true;
+
+    const feedback = document.getElementById("feedback");
+
+    if (jawaban === jawabanBenar) {
+      tombol.style.backgroundColor = "lightgreen";
+      feedback.innerHTML = `
+        <p style="color:lightgreen"><b>Jawaban BENAR ✅</b></p>
+        <p>
+          Fungsi <b>y = x²</b> membentuk parabola terbuka ke atas
+          dan melalui titik (0,0).<br>
+          Dan nilai a > 0, yaitu 1 sehingga grafik akan membentuk parabola terbuka ke atas.
+        </p>
+      `;
+    } else {
+      tombol.style.backgroundColor = "salmon";
+      feedback.innerHTML = `
+        <p style="color:#f87171"><b>Jawaban SALAH ❌</b></p>
+        <p>Jawaban yang benar adalah <b>y = x²</b>.</p>
+      `;
+    }
+
+    document.querySelectorAll("#pilihan button").forEach(btn => {
+      btn.disabled = true;
+      if (btn.innerText.startsWith(jawabanBenar)) {
+        btn.style.backgroundColor = "lightgreen";
+      }
+    });
+
+    document.getElementById("btnNext").disabled = false;
+  }
+
+  function soalBerikutnya() {
+    if (!sudahJawab) {
+        alert("Soal belum dijawab!");
+        return;
+    }
+  window.location.href = "kuis4.html";
+}
+
+function soalSebelumnya() {
+  window.location.href = "kuis2.html";
+}
+
+</script>
+</section>
+
+<footer>
+    <p>© 2025 dibuat oleh kelompok 6</p> <br>
+
+    Erdika Dritufanza <br>
+    Muhammad Iqbal Patih <br>
+    Mita Yuliana
+</footer>
+
+
+
+
+</body>
+</html>
+

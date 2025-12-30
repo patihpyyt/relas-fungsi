@@ -1,0 +1,598 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: rgb(233, 237, 241);
+    background-image: url(..//image/bacground.png);
+    backdrop-filter: blur(px);
+}
+
+/* bagian navabar */
+nav {
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+ background-color: transparent #3c5261;
+ border: 2px solid rgb(64, 64, 109);
+ backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);;
+}
+
+nav h1 {
+  color:rgb(208, 221, 25);
+  font-size: 33px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
+}
+
+
+.link {
+  display: flex;
+  gap: 20px;
+  justify-content: center; 
+  margin-top: 20px;
+}
+
+.link a {
+  text-decoration: none;
+  color: #dad725;
+  font-weight: bold;
+  font-size: 18px;
+  font-family:monospace;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+   transition: color 0.3s
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.link a:hover{
+  background: rgb(255, 255, 0); 
+  box-shadow: 0 0 15px rgb(255, 255, 100), 
+              0 0 30px rgb(255, 255, 150), 
+              0 0 45px rgb(255, 255, 200);
+  transition: all 0.4s ease-in-out;
+  color: black;
+  border: 2px solid black;
+  border-radius: 6px;
+}
+
+
+/* bagian materi utama */
+#materi{
+  background-color: transparent #1e313d;
+  backdrop-filter: blur(6px);
+  color: #f5eded;
+  padding: 20px;
+  border: 2px solid rgb(56, 56, 94);
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  margin: 60px auto;       
+  max-width: 100%;     
+  width: 90%;     
+  
+} 
+.materi-content ul {
+  margin: 10px 0;
+  padding-left: 20px;  
+  list-style-position: inside; 
+}
+
+.materi-content li {
+  margin: 5px 0;           
+}
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.materi-content h4 {
+  margin-top: 20px;        
+  margin-bottom: 10px;
+}
+.materi-content .deskripsi2{
+  margin-top: 34px;
+}
+
+/*detail materi */
+main {
+    flex-grow: 1;  
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 50px; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main h2 {
+    font-size: 2rem;
+    color: #e9f72c; /* Judul utama berwarna kuning */
+    margin-bottom: 25px;
+    font-weight: bold;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular';
+    text-transform: uppercase;
+}
+
+
+.materi-item {
+    background-color: #3c5261; 
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
+}
+
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 18px 25px;  
+    transition:  0.2s;
+}
+
+
+
+.detail p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    
+}
+
+/* Panah Materi*/
+.panah {
+    font-size: 1.2rem;
+    color: #e0e0e0; /* Warna panah putih/abu */
+    transition: transform 0.3s ease-in-out;
+    user-select: none;
+}
+.panah.rotate {
+    transform: rotate(-180deg);
+}
+
+/* Konten Detail (Yang Muncul) */
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4 ease-in-out; 
+    padding: 0 25px;
+}
+.content.active {
+    max-height: 2000px; 
+    padding: 15px 25px 25px 25px; 
+    border-top: 1px solid #555; 
+}
+
+   main {
+  flex: 1; 
+  padding: 20px;
+}
+
+.polinomial {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+}
+
+.kuis1 {
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+}
+
+/* bagian kalkulator */
+ .kalkulator {
+  width: 80%;            
+  max-width: 50%;      
+    margin: 100px auto; 
+  background: transparent #fff;
+  backdrop-filter: blur(3px);
+  padding: 30px;
+  border-radius: 10px;
+  border: 4px solid #425769;
+}
+label{
+  color: white;
+  font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding:20px 12px;
+ 
+}
+    h2 { text-align: center; }
+    input, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+
+    }
+
+    .a1, .a2, button{
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: monospace;
+    background-color: rgb(224,224,46);
+    padding: 10px 15px;
+    border-radius:8px;
+    margin-top: 20px;
+    display: inline-block;
+
+    
+    box-shadow: none;
+}
+
+ 
+    .btn2{
+      width: 100%;
+    }
+
+   .a1:hover, .a2:hover, button:hover{
+    background: rgb(255,255,0);
+    box-shadow: 
+        0 0 15px rgb(255,255,100),
+        0 0 30px rgb(255,255,150),
+        0 0 45px rgb(255,255,200);
+    transition: all .3s ease-in-out;
+}
+.kalkulator-form label {
+  margin-bottom: 19px;      
+}
+
+.kalkulator-form input {
+  margin-bottom: 18px;
+  padding: 10px 40px;
+}
+
+.kalkulator-content h2{
+  color: #d2e625;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 40px;
+}
+
+
+/*  bagian grafik */
+.kalkulator {
+    width: 95%;              
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .kalkulator-form input {
+    width: 100%;             
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .btn2 {
+    width: 100%;             /* tombol juga ikut full */
+    font-size: 15px;
+  }
+
+  #grafik {
+    width: 100% !important;
+    height: 450px !important;
+    max-height: 450px !important;
+}
+
+
+
+
+
+/* bagian vidio pmebelajaran */
+.konten-video {
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.video-wrapper {
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column; 
+  gap: 30px;
+  background: transparent;
+  overflow: visible; /* PENTING */
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 16px;
+}
+
+footer p {
+    max-width: 1200px;
+    margin: 0 auto; /* Tengah-kan paragraf di dalam footer yang full width */
+    padding: 0 50px; /* Jarak 50px dari kiri dan kanan */
+    font-size: 0.85rem;
+}
+footer {
+  background-color: transparent rgb(153, 175, 194);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgb(53, 57, 70);
+  color: rgb(245, 241, 241);
+  text-align: left;
+   text-align: center; 
+    width: 100%;
+   
+    padding: 20px 0; 
+   
+    height: auto; 
+
+}
+
+
+.poter{
+ width: 100%;
+ margin-top: 110px;
+ left: 0;
+ right: 0;
+position: absolute;
+}
+
+.poter1{
+ width: 100%;
+ margin-top: 100px;
+ left: 0;
+ right: 0;
+
+}
+.page-video .poter {
+  position: static;
+}
+
+/* ===== WRAPPER KUIS ===== */
+.kuis {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 80vh;
+}
+
+/* ===== BOX KUIS ===== */
+.kuis-content {
+  margin-top: -30px;
+  transform: translateY(-30px);
+  width: 80%;            
+  max-width: 50%;
+   background-color: transparent #3c5261;
+   backdrop-filter: blur(6px);
+  padding: 25px 30px;
+  border-radius: 12px;
+  border: 2px solid #3c5261;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== JUDUL ===== */
+.kuis-content h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #d6eb1e;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* ===== SOAL ===== */
+.kuis-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #272525;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#judulSoal {
+color: wheat;
+}
+
+.p2{
+  color: wheat;
+}
+/* ===== PILIHAN JAWABAN ===== */
+#pilihan button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+  background: #ecf0f1;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.form1 {
+  color: #dcdde1;
+}
+#pilihan button:hover {
+  background: #dcdde1;
+}
+
+#pilihan button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* ===== FEEDBACK ===== */
+#feedback {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  background: #f7f7f7;
+  font-size: 14px;
+}
+
+/* ===== BUTTON NEXT ===== */
+.btn-next {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-next:hover {
+  background: #2980b9;
+}
+
+/* ===================== */
+/* ===== RESPONSIVE ==== */
+/* ===================== */
+
+/* ===== TABLET (≤ 992px) ===== */
+@media (max-width: 992px) {
+
+  nav h1 {
+    font-size: 26px;
+  }
+
+  .link {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  main {
+    padding: 0 25px;
+  }
+
+  .kalkulator,
+  .kuis-content {
+    max-width: 80%;
+    width: 90%;
+  }
+
+  #grafik {
+    height: 380px !important;
+  }
+
+  .video-wrapper iframe {
+    height: 350px;
+  }
+}
+
+/* ===== MOBILE (≤ 600px) ===== */
+@media (max-width: 600px) {
+
+  /* ===== NAVBAR ===== */
+  nav {
+    padding: 15px;
+  }
+
+  nav h1 {
+    font-size: 22px;
+  }
+
+  .link {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link a {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  /* ===== MATERI ===== */
+  #materi {
+    padding: 15px;
+    width: 95%;
+  }
+
+  main h2 {
+    font-size: 1.5rem;
+  }
+
+  .detail {
+    padding: 15px;
+  }
+
+  .detail p {
+    font-size: 1rem;
+  }
+
+  /* ===== KALKULATOR ===== */
+  .kalkulator {
+    width: 95%;
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  #grafik {
+    height: 300px !important;
+  }
+
+  /* ===== VIDEO ===== */
+  .video-wrapper iframe {
+    height: 230px;
+    border-radius: 12px;
+  }
+
+  /* ===== KUIS ===== */
+  .kuis-content {
+    width: 95%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .kuis-content h2 {
+    font-size: 20px;
+  }
+
+  .kuis-content p {
+    font-size: 14px;
+  }
+
+  /* ===== FOOTER ===== */
+footer {
+    width: 100%;
+    padding: 25px 15px;
+    font-size: 14px;
+    line-height: 1.6;
+    box-sizing: border-box;
+  }
+
+  footer p {
+    padding: 0;
+    text-align: center;
+    margin: 0;
+  }
+
+
+
+ 
+
+
+
+

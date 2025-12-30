@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Detail Relasi</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <nav>
+        <div id="nav-container">
+            <div class="navigasi">
+                <h1>RELASI & FUNGSI</h1>
+            </div>
+            <div class="link">
+                <a href="index.html">Materi</a>
+                <a href="pembelajaran.html">Pembelajaran</a>
+                <a href="grafik.html">Kalkulator</a>
+                <a href="kuis1.html">Kuis</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="content-container"> 
+    <h2>Materi Detail FUNGSI</h2>
+    
+    <div class="materi-item">
+        <div class="detail">
+            <p>1. Konsep Dasar Fungsi</p>
+            <span class="panah">▼</span> </div>
+        <div class="content">
+            <p><strong>Pengertian fungsi:</strong></p>
+            <p>Fungsi (atau pemetaan) adalah suatu relasi yang memasangkan setiap anggota dari himpunan pertama (Domain) dengan tepat satu anggota dari himpunan kedua (Kodomain).</p>
+            <p>syarat fungsi</p>
+            <ul><br>
+                <li>Setiap anggota Domain harus memiliki pasangan. (Tidak boleh ada anggota Domain yang tidak memilikipasngan).</li>
+                <li>Anggota Domain harus berpasangan tepat satu kali. (Tidak boleh ada anggota Domain yang memiliki lebih dari 1 pasangan).</li>
+              
+            </ul>
+        </div>
+    </div>
+    
+    <div class="materi-item">
+        <div class="detail">
+            <p>2. Jenis-jenis Fungsi</p>
+            <span class="panah">▼</span>
+        </div>
+        <div class="content">
+            <p>Dalam matematika diskrit, fungsi memiliki beberapa sifat utama:</p>
+            <ul>
+                <li><strong>Relasi Fungsi Injektif (Satu-satu / One-to-one):</strong> Definisi: Fungsi di mana setiap anggota Kodomain hanya dipasangkan paling banyak satu kali oleh anggota Domain. Contoh: Jika ada dua anggota Domain yang berbeda, maka hasil pemetaannya di Kodomain juga harus berbeda. (Tidak boleh ada anggota Kodomain yang diduakan).</li><br>
+
+                <li><strong>Fungsi Surjektif (Pada / Onto)</strong>  Definisi: Fungsi di mana setiap anggota Kodomain memiliki pasangan dengan anggota Domain. <br>
+
+                syarat: Daerah hasil (Range) dari fungsi ini sama dengan Kodomain. (Tidak boleh ada anggota Kodomain yang tidak memiliki pasangan).</li><br>
+
+                <li><strong>Fungsi Surjektif (Pada / Onto)</strong> Definisi: Fungsi di mana setiap anggota Kodomain memiliki pasangan dengan anggota Domain.
+
+                Kunci: Daerah hasil (Range) dari fungsi ini sama dengan Kodomain. (Tidak boleh ada anggota Kodomain yang tidakmemiliki pasagan).</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="materi-item">
+        <div class="detail">
+            <p>3. bentuk bentuk fungsi</p>
+            <span class="panah">▼</span>
+        </div>
+        <div class="content">
+            <p>Untuk memahami bentuk fungsi, kita bisa menyajikannya:</p><br>
+            <ol>
+                <li><strong>Fungsi linear:</strong><br> 
+                Fungsi linear adalah fungsi dengan pangkat tertinggi variabelnya satu (1).
+                Grafiknya selalu berupa garis lurus. <br>
+                Contoh: f(x) = 2x + 1
+                Ketika digambar, hasilnya garis lurus miring 
+                </li><br>
+                   <img src="image/linear.png" class="polinomial"><br><br>
+
+                <li><strong>Fungsi kuadrat:</strong><br> 
+                Fungsi kuadrat adalah fungsi yang variabelnya berpangkat dua (2).
+                Grafiknya berbentuk parabola bisa membuka ke atas atau ke bawah tergantung tanda koefisien a nya, <br>
+                jika a < 0 maka grafik akan membuka ke atas, namun  jika a < 0 maka grafik akan membuka ke bawah. Contoh: f(x) = x<sup>2</sup>-4x + 3 </li><br>
+                <img src="image/kuadrat.png" class="polinomial"><br><br>
+                
+                <li><strong>Fungsi polinomial:</strong><br> 
+                Fungsi polinomial adalah fungsi yang variabelnya memiliki pangkat lebih dari dua,
+                dan merupakan penjumlahan beberapa suku berpangkat.
+                Grafiknya bisa bergelombang, tergantung pada pangkat tertinggi (derajatnya).  Contoh:
+                 f(x) = x<sup>3</sup> +2x<sup>2</sup> +x -2</li>
+            </ol><br>
+            <img src="image/polinomial.png" class="polinomial" alt="">
+        </div>
+    </div>
+   <footer class="poter">
+  <p>© 2025 dibuat oleh kelompok 6</p> <br>
+
+    Erdika Dritufanza <br>
+    Muhammad Iqbal Patih <br>
+    Mita Yuliana
+  </footer>
+</main>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+    
+    // Ambil semua header akordeon yang bisa diklik
+    const headers = document.querySelectorAll('.detail');
+
+    headers.forEach(header => {
+        header.addEventListener('click', function() {
+            // Dapatkan konten yang terkait (element setelah header)
+            const content = this.nextElementSibling;
+            
+            // Dapatkan elemen panah di dalam header
+            const panah = this.querySelector('.panah');
+
+            // Toggle kelas 'active' pada konten untuk menampilkan/menyembunyikan
+            content.classList.toggle('active');
+            
+            // Toggle kelas 'rotate' pada panah untuk memutar ikon
+            panah.classList.toggle('rotate');
+            
+            // Opsional: Tutup akordeon lain yang terbuka saat ini
+            headers.forEach(otherHeader => {
+                if (otherHeader !== header) {
+                    otherHeader.nextElementSibling.classList.remove('active');
+                    otherHeader.querySelector('.panah').classList.remove('rotate');
+                }
+            });
+        });
+    });
+});
+</script>
+</body>
+</html>

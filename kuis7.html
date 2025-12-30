@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Grafik</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.3.0/math.min.js"></script>
+    <script src="kodeprogram_js/kalkulator.js"></script>
+</head>
+<body>
+
+<nav>
+    <h1>LATIHAN SOAL</h1>
+    <div class="link">
+        <a href="index.html">Materi</a>
+        <a href="pembelajaran.html">Pembelajaran</a>
+        <a href="grafik.html">Kalkulator</a>
+        <a href="kuis.html">Kuis</a>
+    </div>
+</nav>
+
+<section>
+<div class="kuis">
+    <div class="kuis-content">
+        <h2>Latihan Soal</h2>
+        <p id="judulSoal">Diberikan suatu fungsi polinomial <b>f(x) = x<sup>3</sup> -2x<sup>2</sup> +x -2</b><br>
+            Carilah kodomain dari fungsi tersebut dengan domain {3, 5}</p>
+        
+        <div id="pilihan">
+            <button onclick="cekJawaban('A', this)">A. (-12, 80)</button>
+            <button onclick="cekJawaban('B', this)">B. (10, -78)</button>
+            <button onclick="cekJawaban('C', this)">C. (-10, -80)</button>
+            <button onclick="cekJawaban('D', this)">D. (10, 75)</button>
+            <button onclick="cekJawaban('E', this)">E. (10, 78)</button>
+        </div>
+        <div id="feedback"></div>
+
+        <div class="button-container">
+            <button onclick="selesaiKuis()" class="btn-selesai">Selesai</button>
+        </div>
+    </div>
+</div>
+<script>
+    let sudahJawab = false;
+    const jawabanBenar = "E";
+    let skor = 0;
+
+    function cekJawaban(pilihan, tombol) {
+        const feedback = document.getElementById("feedback");
+
+        if (sudahJawab) return;
+
+        //funcion
+        function f(x) {
+          return x**3 - 2*x**2 + x - 2
+        }
+
+        //deklarasi constanta
+        const domain = [3, 5]; 
+        
+
+        //perhitungan titik pusat
+        let perhitungan = "";
+        domain.forEach(x => {
+        perhitungan += `f(${x}) = (${x})³ - 2*(${x})² + (${x}) - 2 = ${f(x)}<br>`;
+        });
+
+        if(pilihan == jawabanBenar) {
+            feedback.innerHTML = `Jawaban Benar ✅<br><br>Dengan mengsubtitusikan nilai domain ke  dalam fungsi polinomial:<br>
+            ${perhitungan}`;
+            feedback.style.color = "green";
+            tombol.style.backgroundColor = "lightgreen";
+        } else{
+            feedback.innerHTML = `Jawaban salah ❌<br><br>Jawaban yang benar adalah <b>E</b><br>
+            ${perhitungan}`;
+            tombol.style.backgroundColor = "salmon";
+        }
+        sudahJawab = true;
+        document.getElementById("btnNext").disabled = false;
+    }
+
+
+
+    function selesaiKuis(){
+        window.location.href = "index.html";
+    }
+
+     </script>
+</section>
+
+<footer>
+    <p>© 2025 dibuat oleh kelompok 6</p> <br>
+
+    Erdika Dritufanza <br>
+    Muhammad Iqbal Patih <br>
+    Mita Yuliana
+</footer>
+
+
+
+
+</body>
+</html>
+

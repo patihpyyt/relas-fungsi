@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Grafik</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.3.0/math.min.js"></script>
+    <script src="kodeprogram_js/kalkulator.js"></script>
+</head>
+<body>
+
+<nav>
+    <h1>LATIHAN SOAL</h1>
+    <div class="link">
+        <a href="index.html">Materi</a>
+        <a href="pembelajaran.html">Pembelajaran</a>
+        <a href="grafik.html">Kalkulator</a>
+        <a href="kuis.html">Kuis</a>
+    </div>
+</nav>
+
+<section>
+<div class="kuis">
+    <div class="kuis-content">
+        <h2>Latihan Soal</h2>
+        <p id="judulSoal">Perhatikan gambar grafik di bawah ini!</p>
+        <img src="image/soal4.png" class="polinomial">
+        <p style="color: aliceblue;">Dari grafik di atas tentukan fungsi f(x) yang membentuk grafik tersebut...</p>
+
+        <form id="quizForm" class="form1">
+        <input type="radio" name="jawaban" value="x^3+x^2-x+4"> f(x) = x³ + x² - x + 4<br>
+        <input type="radio" name="jawaban" value="x^3-x^2+x+4"> f(x) = x³ - x² + x + 4<br>
+        <input type="radio" name="jawaban" value="x^3+x^2+x+4"> f(x) = x³ + x² + x + 4<br>
+        <input type="radio" name="jawaban" value="x^3-x^2-x+4"> f(x) = x³ - x² - x + 4<br><br>
+        <button type="button" class="btn2" onclick="cekJawaban()">Cek Jawaban</button>
+        </form>
+
+        <p id="hasil"></p>
+
+        <button class="btn2" id="btnNext" onclick="soalBerikutnya()">Soal Berikutnya</button>
+        <button class="btn2" onclick="soalSebelumnya()">Soal Sebelumnya</button>
+    </div>
+</div>
+<script>
+  let sudahJawab = false;
+
+function cekJawaban() {
+      const form = document.getElementById("quizForm");
+      const pilihan = form.jawaban.value;
+      const hasil = document.getElementById("hasil");
+
+      if (!pilihan) {
+        hasil.innerText = "Silakan pilih jawaban terlebih dahulu!";
+        hasil.style.color = "black";
+        return;
+      }
+
+      sudahJawab = true;
+
+      // Titik domain
+      const domain = [-2, -1, 0, 1];
+
+      // Fungsi benar
+      function f(x) {
+        return x**3 + x**2 - x + 4;
+      }
+
+      // Hitung nilai fungsi untuk domain
+      let perhitungan = "";
+      domain.forEach(x => {
+        perhitungan += `f(${x}) = (${x})³ + (${x})² - (${x}) + 4 = ${f(x)}<br>`;
+      });
+
+      if (pilihan === "x^3+x^2-x+4") {
+        hasil.innerHTML = `Jawaban benar! ✅<br><br><strong>Langkah-langkah penentuan fungsi:</strong><br>${perhitungan}`;
+        hasil.style.color = "green";
+      } else {
+        hasil.innerHTML = `Jawaban salah! ❌<br><br>Fungsi yang benar adalah f(x) = x³ + x² - x + 4.<br><strong>Langkah-langkah perhitungan:</strong><br>${perhitungan}`;
+        hasil.style.color = "red";
+      }
+      document.getElementById("btnNext").disabled = false;
+    }
+
+     function soalBerikutnya() {
+    if (!sudahJawab) {
+        alert("Soal belum dijawab!");
+        return;
+    }
+  window.location.href = "kuis5.html";
+}
+
+function soalSebelumnya() {
+  window.location.href = "kuis3.html";
+}
+
+</script>
+</section>
+
+<footer>
+    <p>© 2025 dibuat oleh kelompok 6</p> <br>
+
+    Erdika Dritufanza <br>
+    Muhammad Iqbal Patih <br>
+    Mita Yuliana
+</footer>
+
+
+
+
+</body>
+</html>
+

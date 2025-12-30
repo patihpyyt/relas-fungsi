@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Grafik</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.3.0/math.min.js"></script>
+    <script src="kodeprogram_js/kalkulator.js"></script>
+</head>
+<body>
+
+<nav>
+    <h1>LATIHAN SOAL</h1>
+    <div class="link">
+        <a href="index.html">Materi</a>
+        <a href="pembelajaran.html">Pembelajaran</a>
+        <a href="grafik.html">Kalkulator</a>
+        <a href="kuis.html">Kuis</a>
+    </div>
+</nav>
+
+<section>
+<div class="kuis">
+    <div class="kuis-content">
+        <h2>Latihan Soal</h2>
+        <p id="judulSoal">
+            Diberikan fungsi:<br>
+        <strong >f(x) = 2x + 4</strong><br><br>
+    Manakah grafik yang benar untuk fungsi tersebut?</p>
+
+        <div id="pilihan">
+            <button onclick="cekJawaban('A', this)">
+                A. Garis lurus melalui titik (0,4) dan (1,6)
+            </button>
+
+            <button onclick="cekJawaban('B', this)">
+                B. Garis lurus melalui titik (0,2) dan (1,6)
+            </button>
+
+            <button onclick="cekJawaban('C', this)">
+                C. Garis lurus melalui titik (0,4) dan (1,4)
+            </button>
+
+            <button onclick="cekJawaban('D', this)">
+                D. Parabola terbuka keatas
+            </button>
+
+            <button onclick="cekJawaban('E', this)">
+                E. Parabola terbuka kebawah
+            </button>
+        </div>
+        <div id="feedback"></div>
+
+        <button class="btn2" id="btnNext" onclick="soalBerikutnya()">Soal Berikutnya</button>
+        <button class="btn2" onclick="soalSebelumnya()">Soal Sebelumnya</button>
+    </div>
+</div>
+<script>
+const jawabanBenar = "A";
+let sudahJawab = false;
+
+function cekJawaban(jawabanUser, tombol) {
+  if (sudahJawab) return;
+  sudahJawab = true;
+
+  const feedback = document.getElementById("feedback");
+
+  if (jawabanUser === jawabanBenar) {
+    tombol.style.backgroundColor = "lightgreen";
+    feedback.innerHTML = `
+      <p style="color:green;"><b>Jawaban BENAR ✅</b></p>
+      <p>
+        Diketahui f(x) = 2x + 4.<br>
+        Jika x = 0 → y = 4, sehingga titik (0,4).<br>
+        Jika x = 1 → y = 6, sehingga titik (1,6).<br><br>
+        Jadi grafik yang benar adalah <b>garis lurus</b> melalui titik (0,4) dan (1,6).
+      </p>
+    `;
+  } else {
+    tombol.style.backgroundColor = "salmon";
+    feedback.innerHTML = `
+      <p style="color:red;"><b>Jawaban SALAH ❌</b></p>
+      <p><b>Jawaban yang benar adalah A.</b></p>
+      <p>
+        Fungsi f(x) = 2x + 4 merupakan fungsi linear.<br>
+        Grafiknya berupa garis lurus dengan gradien 2 dan titik potong sumbu-Y di (0,4).
+      </p>
+    `;
+  }
+
+  document.querySelectorAll("#pilihan button").forEach(btn => {
+    btn.disabled = true;
+    if (btn.innerText.startsWith(jawabanBenar)) {
+      btn.style.backgroundColor = "lightgreen";
+    }
+  });
+    btnNext.disabled = false;
+}
+
+function soalBerikutnya() {
+    if (!sudahJawab) {
+        alert("Soal belum dijawab!");
+        return;
+    }
+  window.location.href = "kuis3.html";
+}
+
+function soalSebelumnya() {
+  window.location.href = "kuis1.html";
+}
+</script>
+
+</section>
+
+<footer>
+    <p>© 2025 dibuat oleh kelompok 6</p> <br>
+
+    Erdika Dritufanza <br>
+    Muhammad Iqbal Patih <br>
+    Mita Yuliana
+</footer>
+
+
+
+
+</body>
+</html>
