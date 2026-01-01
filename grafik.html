@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Grafik</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.3.0/math.min.js"></script>
+    <script src="kodeprogram_js/kalkulator.js"></script>
+</head>
+<body>
+
+<nav>
+    <h1>KALKULATOR GRAFIK FUNGSI</h1>
+    <div class="link">
+        <a href="index.html">Materi</a>
+        <a href="pembelajaran.html">Pembelajaran</a>
+        <a href="grafik.html">Kalkulator</a>
+        <a href="kuis1.html">Kuis</a>
+    </div>
+</nav>
+
+<section>
+<div class="kalkulator">
+    <div class="kalkulator-content">
+        <h2>Gambar Grafik Fungsi</h2>
+
+        <label>Masukkan fungsi (contoh: 2x<sup>2</sup> +4x +2) :</label>
+        <input type="text" id="fungsiInput" placeholder="Masukkan fungsi">
+
+        <button class="btn2" onclick="gambarGrafik()">Gambar Grafik</button>
+
+        <canvas id="grafik" style="margin-top:30px;"></canvas>
+    </div>
+</div>
+</section>
+
+<footer>
+    <p>© 2025 dibuat oleh kelompok 6</p> <br>
+
+    Erdika Dritufanza <br>
+    Muhammad Iqbal Patih <br>
+    Mita Yuliana
+</footer>
+
+
+
+
+</body>
+</html>
