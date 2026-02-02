@@ -536,22 +536,61 @@ color: wheat;
 /* ===================== */
 
 
-
+/* Responsive untuk layar kecil, max 600px (HP) */
 @media (max-width: 600px) {
-  nav h1 { font-size: 20px; }
-  .link a { width: 100%; text-align: center; font-size: 16px; }
+  nav {
+    flex-direction: column; /* nav link vertikal */
+    padding: 10px;
+  }
+
+  nav h1 { 
+    font-size: 20px; 
+    text-align: center;
+  }
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .link a { 
+    width: 100%; 
+    text-align: center; 
+    font-size: 16px; 
+  }
 
   #materi, .kalkulator, .kuis-content {
     width: 95%;
     padding: 15px;
+    margin: auto;
   }
 
   .video-wrapper iframe {
+    width: 100%; /* pastikan video full responsive */
     height: 230px;
   }
 
-  input, button { font-size: 14px; padding: 8px; }
+  input, button { 
+    font-size: 14px; 
+    padding: 8px; 
+    width: 100%; /* tombol dan input full width */
+    box-sizing: border-box;
+  }
+
   label { font-size: 14px; }
+
   main h2 { font-size: 1.5rem; }
-  
+
+  /* Optional: buat gambar responsive */
+  img { max-width: 100%; height: auto; }
+}
+
+/* Media query lain untuk tablet, misal 600px - 1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+  nav h1 { font-size: 24px; }
+  .link a { font-size: 18px; }
+  #materi, .kalkulator, .kuis-content { width: 90%; padding: 20px; }
+  .video-wrapper iframe { height: 350px; }
+  main h2 { font-size: 2rem; }
 }
