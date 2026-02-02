@@ -12,6 +12,7 @@ body{
 
 /* bagian navabar */
 nav {
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -103,7 +104,6 @@ a{
   background-color: transparent #1e313d;
   color: #f5eded;
   padding: 20px;
-  
   border: 2px solid rgb(56, 56, 94);
   border-radius: 10px;
  background: rgba(3, 1, 23, 0.4); /* hitam transparan */
@@ -201,17 +201,20 @@ main h2 {
 
 /* Konten Detail (Yang Muncul) */
 .content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out, padding 0.4 ease-in-out; 
-    padding: 0 25px;
-}
-.content.active {
-    max-height: 2000px; 
-    padding: 15px 25px 25px 25px; 
-    border-top: 1px solid #555; 
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  padding: 0 25px;
 }
 
+/* Konten aktif */
+.content.active {
+  max-height: 100vh;       /* jangan pakai 2000px, pakai 100vh supaya menyesuaikan layar */
+  padding: 15px 25px 25px 25px;
+  border-top: 1px solid #555;
+  overflow-y: auto;        /* scroll otomatis kalau isi tinggi */
+  box-sizing: border-box;
+}
    main {
   flex: 1; 
   padding: 20px;
@@ -532,140 +535,23 @@ color: wheat;
 /* ===== RESPONSIVE ==== */
 /* ===================== */
 
-/* ===== TABLET (≤ 992px) ===== */
-@media (max-width: 992px) {
 
-  nav h1 {
-    font-size: 26px;
-  }
 
-  .link {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  main {
-    padding: 0 25px;
-  }
-
-  .kalkulator,
-  .kuis-content {
-    max-width: 80%;
-    width: 90%;
-  }
-
-  #grafik {
-    height: 380px !important;
-  }
-
-  .video-wrapper iframe {
-    height: 350px;
-  }
-}
-
-/* ===== MOBILE (≤ 600px) ===== */
 @media (max-width: 600px) {
+  nav h1 { font-size: 20px; }
+  .link a { width: 100%; text-align: center; font-size: 16px; }
 
-  /* ===== NAVBAR ===== */
-  nav {
-    padding: 15px;
-  }
-
-  nav h1 {
-    font-size: 22px;
-  }
-
-  .link {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .link a {
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-  }
-
-  /* ===== MATERI ===== */
-  #materi {
-    padding: 15px;
+  #materi, .kalkulator, .kuis-content {
     width: 95%;
-  }
-
-  main h2 {
-    font-size: 1.5rem;
-  }
-
-  .detail {
     padding: 15px;
   }
 
-  .detail p {
-    font-size: 1rem;
-  }
-
-  /* ===== KALKULATOR ===== */
-  .kalkulator {
-    width: 95%;
-    max-width: 100%;
-    margin: 50px auto;
-    padding: 20px;
-  }
-
-  input, button {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  label {
-    font-size: 15px;
-  }
-
-  #grafik {
-    height: 300px !important;
-  }
-
-  /* ===== VIDEO ===== */
   .video-wrapper iframe {
     height: 230px;
-    border-radius: 12px;
   }
 
-  /* ===== KUIS ===== */
-  .kuis-content {
-    width: 95%;
-    max-width: 100%;
-    padding: 20px;
-  }
-
-  .kuis-content h2 {
-    font-size: 20px;
-  }
-
-  .kuis-content p {
-    font-size: 14px;
-  }
-
-  /* ===== FOOTER ===== */
-footer {
-    width: 100%;
-    padding: 25px 15px;
-    font-size: 14px;
-    line-height: 1.6;
-    box-sizing: border-box;
-  }
-
-  footer p {
-    padding: 0;
-    text-align: center;
-    margin: 0;
-  }
-
-
-
- 
-
-
-
-
+  input, button { font-size: 14px; padding: 8px; }
+  label { font-size: 14px; }
+  main h2 { font-size: 1.5rem; }
+  
 }
