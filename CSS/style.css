@@ -12,15 +12,12 @@ body{
 
 /* bagian navabar */
 nav {
-  position: fixed;
-  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   background: rgba(3, 1, 23, 0.4);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  position: fixed;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -165,11 +162,14 @@ main h2 {
     background-color: #3c5261; 
     color: white;
     margin-bottom: 10px;
+    margin-top: 0;
     border-radius: 5px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
 }
 
-
+#content-container{
+ margin-top: 0;
+}
 .detail {
     display: flex;
     justify-content: space-between;
@@ -237,7 +237,7 @@ main h2 {
  .kalkulator {
   width: 80%;            
   max-width: 50%;      
-    margin: 100px auto; 
+   margin-top:160px,;
  background: rgba(5, 2, 35, 0.4); /* hitam transparan */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px); /* biar support Safari */
@@ -481,6 +481,7 @@ color: wheat;
   padding: 10px;
   margin: 8px 0;
   border: none;
+  color: black;
   border-radius: 6px;
   background: #ecf0f1;
   font-size: 15px;
