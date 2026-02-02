@@ -12,32 +12,67 @@ body{
 
 /* bagian navabar */
 nav {
-  display: flex ;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
- background-color: transparent #3c5261;
- border: 2px solid rgb(64, 64, 109);
- backdrop-filter: blur(6px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);;
+  position: fixed;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(3, 1, 23, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: fixed;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-nav h1 {
-  color:rgb(208, 221, 25);
-  font-size: 33px;
-  font-weight: bold;
-  text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-bottom: 10px;
+nav.scrolled {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(23, 24, 28, 0.4);
 }
+
+#content-container {
+  flex: 1;              /* INI YANG BIKIN FOOTER WARAS */
+  margin-top: 120px;    /* offset navbar */
+  padding: 40px 50px;
+}
+
+
+section {
+  min-height: 200vh;
+}
+
+.logo-wrapper {
+  display: flex;           /* Sejajar horizontal */
+  align-items: center;     /* Vertikal center */
+  justify-content: center; /* Tengah-kan seluruh container */
+  gap: 10px;               /* Jarak ikon & teks */
+}
+  
+.logo-wrapper h1 {
+  margin: 0;
+  color: rgb(208, 221, 25);
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 19px;
+  margin-bottom: 12px;
+   font-family:monospace;
+}
+
+.logo-wrapper .fas {
+   color: rgba(95, 174, 239, 0.4);
+  margin-top: 12px;
+  font-size: 25px;
+  display: block; /* Penting! Biar bisa ikut center */
+}
+
 
 
 .link {
   display: flex;
   gap: 20px;
   justify-content: center; 
-  margin-top: 20px;
+
 }
 
 .link a {
@@ -69,22 +104,23 @@ a{
 /* bagian materi utama */
 #materi{
   background-color: transparent #1e313d;
-  backdrop-filter: blur(6px);
   color: #f5eded;
   padding: 20px;
+  
   border: 2px solid rgb(56, 56, 94);
   border-radius: 10px;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-  margin: 60px auto;       
+ background: rgba(3, 1, 23, 0.4); /* hitam transparan */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* biar support Safari */
+
+  border: 2px solid rgb(64, 64, 109);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin: 160px auto;       
   max-width: 100%;     
   width: 90%;     
   
 } 
-.materi-content ul {
-  margin: 10px 0;
-  padding-left: 20px;  
-  list-style-position: inside; 
-}
+
 
 .materi-content li {
   margin: 5px 0;           
@@ -100,6 +136,9 @@ section {
 .materi-content .deskripsi2{
   margin-top: 34px;
 }
+#content-container {
+  scroll-margin-top: 90px; /* tinggi navbar */
+}
 
 /*detail materi */
 main {
@@ -108,6 +147,7 @@ main {
     margin: 30px auto;
     padding: 0 50px; 
     width: 100%;
+    position: fixed;
     box-sizing: border-box;
 }
 
@@ -198,8 +238,11 @@ main h2 {
   width: 80%;            
   max-width: 50%;      
     margin: 100px auto; 
-  background: transparent #fff;
-  backdrop-filter: blur(3px);
+ background: rgba(5, 2, 35, 0.4); /* hitam transparan */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* biar support Safari */
+  border: 2px solid rgb(64, 64, 109);
+  box-shadow: 0 2px 6px rgba(82, 75, 75, 0.3);
   padding: 30px;
   border-radius: 10px;
   border: 4px solid #425769;
@@ -220,13 +263,18 @@ label{
       border-radius: 6px;
 
     }
-
+.img1{
+  height: 50vh;
+  width: 100%;
+  padding:0;
+}
     .a1, .a2, button{
-    color: black;
+    color: rgb(248, 237, 237);
     font-weight: bold;
     font-size: 18px;
+ 
     font-family: monospace;
-    background-color: rgb(224,224,46);
+    background: rgba(22, 12, 129, 0.4); 
     padding: 10px 15px;
     border-radius:8px;
     margin-top: 20px;
@@ -239,14 +287,26 @@ label{
  
     .btn2{
       width: 100%;
+      background-color: #d2e625;
+      color: black;
     }
 
-   .a1:hover, .a2:hover, button:hover{
-    background: rgb(255,255,0);
+   button:hover{
+    background: rgb(242, 255, 0);
     box-shadow: 
-        0 0 15px rgb(255,255,100),
-        0 0 30px rgb(255,255,150),
-        0 0 45px rgb(255,255,200);
+        0 0 15px rgb(204, 206, 54),
+        0 0 30px rgb(234, 255, 150),
+        0 0 45px rgb(255, 253, 200);
+    transition: all .3s ease-in-out;
+}
+
+
+   .a1:hover, .a2:hover:hover{
+    background: rgb(10, 7, 75);
+    box-shadow: 
+        0 0 15px rgb(54, 54, 206),
+        0 0 30px rgb(171, 150, 255),
+        0 0 45px rgb(201, 200, 255);
     transition: all .3s ease-in-out;
 }
 .kalkulator-form label {
@@ -295,7 +355,7 @@ label{
 
 /* bagian vidio pmebelajaran */
 .konten-video {
-  margin-top: 120px;
+  margin-top: 170px;
   display: flex;
   justify-content: center;
 }
@@ -319,34 +379,40 @@ label{
 
 footer p {
     max-width: 1200px;
-    margin: 0 auto; /* Tengah-kan paragraf di dalam footer yang full width */
-    padding: 0 50px; /* Jarak 50px dari kiri dan kanan */
+    margin: 0 auto; /* Tengah-kan paragraf */
+    padding: 0 50px; /* Jarak dari kiri dan kanan */
     font-size: 0.85rem;
 }
+
+/* Footer utama */
 footer {
-  background-color: transparent rgb(153, 175, 194);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgb(53, 57, 70);
-  color: rgb(245, 241, 241);
-  text-align: left;
-   text-align: center; 
     width: 100%;
-   
-    padding: 20px 0; 
-   
-    height: auto; 
-
+    background: rgba(5, 2, 35, 0.4); /* hitam transparan */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* support Safari */
+    border: 2px solid rgb(53, 57, 70);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    color: rgb(245, 241, 241);
+    text-align: center;
+    padding: 12px 0;
+    
+    /* Agar footer selalu di bawah layar */
+    position: relative; /* bisa diubah ke fixed kalau mau selalu terlihat */
 }
 
 
-.poter{
- width: 100%;
- margin-top: 110px;
- left: 0;
- right: 0;
-position: absolute;
+.poter {
+    width: 100%;
+    background: rgba(3, 1, 23, 0.4); /* ganti sesuai warna footer */
+    color: #fff; /* teks footer */
+    text-align: center;
+    padding: 20px 0;
+    
+    position: fixed; /* selalu menempel di bawah layar */
+    left: 0;
+    bottom: 0;
+    z-index: 100; /* supaya tetap di atas konten */
 }
-
 .poter1{
  width: 100%;
  margin-top: 100px;
@@ -364,6 +430,7 @@ position: absolute;
   justify-content: center;
   padding: 40px 20px;
   min-height: 80vh;
+  margin-top: 160px;
 }
 
 /* ===== BOX KUIS ===== */
@@ -372,8 +439,12 @@ position: absolute;
   transform: translateY(-30px);
   width: 80%;            
   max-width: 50%;
-   background-color: transparent #3c5261;
-   backdrop-filter: blur(6px);
+   background: rgba(5, 2, 35, 0.4); /* hitam transparan */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* biar support Safari */
+
+  border: 2px solid rgb(64, 64, 109);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   padding: 25px 30px;
   border-radius: 12px;
   border: 2px solid #3c5261;
