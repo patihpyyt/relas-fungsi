@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Grafik</title>
-
+   
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="CSS/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.3.0/math.min.js"></script>
     <script src="kodeprogram_js/kalkulator.js"></script>
 </head>
 <body>
- <nav>
-        <div id="nav-container">
-        <div class="navigasi">
-            <div class="logo-wrapper">
-  <i class="fas fa-project-diagram"></i>
-  <h1>KALKULATOR</h1>
-</div>
-        </div>
-        <div class="link">
-    <a href="index.html">Materi</a>
-    <a href="pembelajaran.html">Pembelajaran</a>
-    <a href="grafik.html">Kalkulator</a>
-    <a href="kuis1.html">Kuis</a>
-        </div>
-        </div>
-     </nav>
+   <div id="nav-container">
+  <div class="nav-wrapper">
 
+    <div class="nav-top">
+     <i class="fas fa-calculator"></i>
+
+      <h1 class="nav-title">KALKULATOR</h1>
+      
+
+      <label for="humberger" class="hamburger">&#9776;</label>
+      <input type="checkbox" id="humberger">
+    </div>
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Materi</a></li>
+        <li><a href="pembelajaran.html">Video Pembelajaran</a></li>
+        <li><a href="grafik.html">Kalkulator</a></li>
+        <li><a href="kuis1.html">Kuis</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
 <section>
 <div class="kalkulator">
     <div class="kalkulator-content">
@@ -53,6 +61,11 @@
 
 
 
-
+ <script>
+function toggleMenu() {
+    const link = document.querySelector('.link');
+    link.style.display = link.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
 </body>
 </html>
