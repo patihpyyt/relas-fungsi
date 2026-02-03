@@ -9,13 +9,13 @@ body{
     background-image: url(..//image/bacground.png);
     backdrop-filter: blur(px);
 }
-
 /* bagian navabar */
-nav {
+#nav-container {
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
+  height: 100px;
   background: rgba(3, 1, 23, 0.4);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -29,6 +29,76 @@ nav.scrolled {
   box-shadow: 0 4px 12px rgba(23, 24, 28, 0.4);
 }
 
+* WRAPPER */
+.nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* BAR ATAS */
+.nav-top {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* H1 TENGAH */
+  align-items: center;
+}
+
+/* JUDUL */
+.nav-title {
+  color: rgb(251, 255, 5);
+  font-size: 22px;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ i{
+  margin-top: 10px;
+  margin-right: 5px;
+  color: #dcdde1;
+ }
+/* HAMBURGER */
+.hamburger {
+  position: absolute;
+  right: 20px;
+  font-size: 26px;
+  color: rgb(255, 251, 0);
+  cursor: pointer;
+  margin-top: 12px;
+  display: none; /* muncul di mobile */
+}
+
+#humberger {
+  display: none;
+}
+
+/* MENU DESKTOP */
+.nav-menu ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin-top: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: rgb(234, 251, 3);
+  font-weight: 500;
+  font-family: monospace;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+/* DESKTOP */
+.nav-menu {
+  display: block;
+}
+
 #content-container {
   flex: 1;              /* INI YANG BIKIN FOOTER WARAS */
   margin-top: 120px;    /* offset navbar */
@@ -40,30 +110,6 @@ section {
   min-height: 200vh;
 }
 
-.logo-wrapper {
-  display: flex;           /* Sejajar horizontal */
-  align-items: center;     /* Vertikal center */
-  justify-content: center; /* Tengah-kan seluruh container */
-  gap: 10px;               /* Jarak ikon & teks */
-}
-  
-.logo-wrapper h1 {
-  margin: 0;
-  color: rgb(208, 221, 25);
-  font-size: 28px;
-  font-weight: bold;
-  margin-top: 19px;
-  margin-bottom: 12px;
-   font-family:monospace;
-}
-
-.logo-wrapper .fas {
-   color: rgba(95, 174, 239, 0.4);
-  margin-top: 12px;
-  font-size: 25px;
-  display: block; /* Penting! Biar bisa ikut center */
-}
-
 
 
 .link {
@@ -72,6 +118,7 @@ section {
   justify-content: center; 
 
 }
+
 
 .link a {
   text-decoration: none;
@@ -85,8 +132,12 @@ section {
 }
 a{
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
 }
+section {
+  min-height: 200vh;
+}
+
 .link a:hover{
   background: rgb(255, 255, 0); 
   box-shadow: 0 0 15px rgb(255, 255, 100), 
@@ -99,11 +150,14 @@ a{
 }
 
 
+
 /* bagian materi utama */
-#materi{
+.dek{
   background-color: transparent #1e313d;
   color: #f5eded;
   padding: 20px;
+  align-items: center;
+  justify-content: center;
   border: 2px solid rgb(56, 56, 94);
   border-radius: 10px;
  background: rgba(3, 1, 23, 0.4); /* hitam transparan */
@@ -117,7 +171,6 @@ a{
   width: 90%;     
   
 } 
-
 
 .materi-content li {
   margin: 5px 0;           
@@ -188,6 +241,12 @@ main h2 {
     
 }
 
+
+
+
+
+
+
 /* Panah Materi*/
 .panah {
     font-size: 1.2rem;
@@ -236,8 +295,7 @@ main h2 {
   margin: 10px 0;
 }
 
-/* bagian kalkulator */
- .kalkulator {
+.kalkulator {
   width: 80%;            
   max-width: 50%;      
    margin-top:160px,;
@@ -266,19 +324,28 @@ label{
       border-radius: 6px;
 
     }
-.img1{
-  height: 50vh;
-  width: 100%;
-  padding:0;
+/* Gambar detail relasi & fungsi */
+.img1 {
+    width: 100%;       /* maksimal selebar container */
+    max-width: 400px;  /* tidak terlalu besar di desktop */
+    height: auto;      /* tinggi menyesuaikan proporsi asli */
+    display: block;
+    margin: 0 auto;    /* tengah-kan gambar */
+    border-radius: 10px;
+    object-fit: contain; /* pastikan gambar tidak gepeng */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
+
     .a1, .a2, button{
     color: rgb(248, 237, 237);
     font-weight: bold;
     font-size: 18px;
  
     font-family: monospace;
-    background: rgba(22, 12, 129, 0.4); 
+    background: rgba(14, 6, 107, 0.4); 
     padding: 10px 15px;
+    align-items: center;
+    justify-content: center;
     border-radius:8px;
     margin-top: 20px;
     display: inline-block;
@@ -294,15 +361,7 @@ label{
       color: black;
     }
 
-   button:hover{
-    background: rgb(242, 255, 0);
-    box-shadow: 
-        0 0 15px rgb(204, 206, 54),
-        0 0 30px rgb(234, 255, 150),
-        0 0 45px rgb(255, 253, 200);
-    transition: all .3s ease-in-out;
-}
-
+   
 
    .a1:hover, .a2:hover:hover{
     background: rgb(10, 7, 75);
@@ -323,6 +382,7 @@ label{
 
 .kalkulator-content h2{
   color: #d2e625;
+  margin-top: 12px;
  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin-bottom: 40px;
 }
@@ -351,10 +411,6 @@ label{
     height: 450px !important;
     max-height: 450px !important;
 }
-
-
-
-
 
 /* bagian vidio pmebelajaran */
 .konten-video {
@@ -433,19 +489,19 @@ footer {
   justify-content: center;
   padding: 40px 20px;
   min-height: 80vh;
-  margin-top: 160px;
+  width: 100%;
 }
 
 /* ===== BOX KUIS ===== */
 .kuis-content {
   margin-top: -30px;
   transform: translateY(-30px);
-  width: 80%;            
-  max-width: 50%;
+  margin-top: 34px;
+  max-width: 100%;
    background: rgba(5, 2, 35, 0.4); /* hitam transparan */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px); /* biar support Safari */
-
+ width: 80%;
   border: 2px solid rgb(64, 64, 109);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   padding: 25px 30px;
@@ -531,66 +587,110 @@ color: wheat;
   background: #2980b9;
 }
 
-/* ===================== */
-/* ===== RESPONSIVE ==== */
-/* ===================== */
 
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
 
-/* Responsive untuk layar kecil, max 600px (HP) */
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column; /* nav link vertikal */
-    padding: 10px;
+    .link {
+        flex-direction: column;
+        width: 100%;
+        display: none; /* default hidden */
+        margin-top: 10px;
+    }
+
+    .link a {
+        width: 100%;
+        color: #dad725;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+ 
+#nav-container{
+  height: 70px;
+}
+.nav-title {
+  margin-top: 17px;
+}
+i{
+  margin-top: 18px;
+}
+  .nav-menu {
+    display: none;
+    width: 100%;
   }
 
-  nav h1 { 
-    font-size: 20px; 
-    text-align: center;
+  .hamburger {
+    display: block;
   }
 
-  .link {
-    display: flex;
+  
+  .nav-wrapper:has(#humberger:checked) .nav-menu {
+    display: block;
+  }
+
+  .nav-menu ul {
     flex-direction: column;
-    gap: 10px;
+    left: 0;
+    align-items: flex-start;
+    gap: 16px;
+    padding-left: 20-x;
+    position: absolute;
+    width: 100%;
+    left: 0;
+;
+   background: rgba(3, 1, 23, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+    top: 60px; 
+    padding: 16px 0;
   }
-
-  .link a { 
-    width: 100%; 
-    text-align: center; 
-    font-size: 16px; 
-  }
-
-  #materi, .kalkulator, .kuis-content {
-    width: 95%;
-    padding: 15px;
-    margin: auto;
-  }
-
-  .video-wrapper iframe {
-    width: 100%; /* pastikan video full responsive */
-    height: 230px;
-  }
-
-  input, button { 
-    font-size: 14px; 
-    padding: 8px; 
-    width: 100%; /* tombol dan input full width */
-    box-sizing: border-box;
-  }
-
-  label { font-size: 14px; }
-
-  main h2 { font-size: 1.5rem; }
-
-  /* Optional: buat gambar responsive */
-  img { max-width: 100%; height: auto; }
+.nav-menu a:hover {
+  background-color: yellow; 
+  color: rgb(13, 12, 12);
+  border-radius: 8px;
+    background: rgb(242, 255, 0);
+    box-shadow: 
+        0 0 15px rgb(204, 206, 54),
+        0 0 30px rgb(234, 255, 150),
+        0 0 45px rgb(255, 253, 200);
+        backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-/* Media query lain untuk tablet, misal 600px - 1024px */
-@media (min-width: 601px) and (max-width: 1024px) {
-  nav h1 { font-size: 24px; }
-  .link a { font-size: 18px; }
-  #materi, .kalkulator, .kuis-content { width: 90%; padding: 20px; }
-  .video-wrapper iframe { height: 350px; }
-  main h2 { font-size: 2rem; }
+.nav-menu a.active {
+  background-color: #FFD700;
+  color: #000;
+  font-weight: bold;
+}
+/* KHUSUS HP */
+@media (max-width: 768px) {
+
+  .kalkulator {
+    width: 70%;
+    max-width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .kalkulator input,
+  .kalkulator select {
+    width: 100%;
+    height: 52px;       /* lebih gede */
+    font-size: 18px;
+    padding: 10px 14px;
+  }
+
+  .kalkulator button {
+    width: 100%;
+    height: 54px;
+    font-size: 18px;
+    margin-top: 16px;
+  }
+}
+
 }
