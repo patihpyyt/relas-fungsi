@@ -7,23 +7,29 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body id="home">
-    <nav>
-        <div id="nav-container">
-        <div class="navigasi">
-            <div class="logo-wrapper">
-  <i class="fas fa-project-diagram"></i>
-  <h1>Relasi Fungsi</h1>
-</div>
-        </div>
-        <div class="link">
-    <a href="index.html">Materi</a>
-    <a href="pembelajaran.html">Pembelajaran</a>
-    <a href="grafik.html">Kalkulator</a>
-    <a href="kuis1.html">Kuis</a>
-        </div>
-        </div>
-     </nav>
+ <div id="nav-container">
+  <div class="nav-wrapper">
 
+    <div class="nav-top">
+  <i class="fas fa-brain"></i>
+      <h1 class="nav-title">RELASI & FUNGSI</h1>
+      
+
+      <label for="humberger" class="hamburger">&#9776;</label>
+      <input type="checkbox" id="humberger">
+    </div>
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Materi</a></li>
+        <li><a href="pembelajaran.html">Video Pembelajaran</a></li>
+        <li><a href="grafik.html">Kalkulator</a></li>
+        <li><a href="kuis1.html">Kuis</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
     <main id="content-container"> 
     <h2>Materi Detail FUNGSI</h2>
     
@@ -134,6 +140,11 @@
         });
     });
 });
+
+function toggleMenu() {
+    const link = document.querySelector('.link');
+    link.style.display = link.style.display === 'flex' ? 'none' : 'flex';
+}
 </script>
 </body>
 </html>
