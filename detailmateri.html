@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi Detail Relasi</title>
+    <title>Document</title>
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
-<div id="nav-container">
+<body class="page-vidio">
+    
+   <div id="nav-container">
   <div class="nav-wrapper">
 
     <div class="nav-top">
-  <i class="fas fa-brain"></i>
+      <i class="fas fa-play-circle"></i>
       <h1 class="nav-title">RELASI & FUNGSI</h1>
       
 
@@ -31,106 +32,151 @@
 
   </div>
 </div>
-
+</nav>
+    
+    <div class="detail">
     <main id="content-container"> 
     <h2>Materi Detail Relasi</h2>
-    
-    <div class="materi-item">
-        <div class="detail">
-            <p>1. Konsep Dasar Relasi</p>
-            <span class="panah">▼</span> </div>
-        <div class="content">
-            <p><strong>Pengertian Relasi:</strong></p>
-            <p>Relasi adalah hubungan antara dua himpunan, misalnya himpunan A dan himpunan B. Relasi didefinisikan sebagai aturan yang memasangkan anggota-anggota himpunan A dengan anggota-anggota himpunan B.</p>
-            <p>Relasi dapat disajikan dalam tiga cara:</p>
-            <ul><br>
-                <li>Diagram Panah</li>
-                <li>Himpunan Pasangan Berurutan</li>
-                <li>Diagram Kartesius</li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="materi-item">
-        <div class="detail">
-            <p>2. Jenis-jenis Relasi</p>
-            <span class="panah">▼</span>
-        </div>
-        <div class="content">
-            <p>Dalam matematika diskrit, relasi memiliki beberapa sifat utama:</p>
-            <ul>
-                <li><strong>Relasi Refleksif:</strong> Setiap elemen berhubungan dengan dirinya sendiri. Contoh: 5 sama 5.</li><br>
-                <li><strong>Relasi Simetris:</strong>  jika anggota pertama berhubungan dengan anggota kedua, maka anggota kedua harus berhubungan kembali dengan anggota pertama . contoh: Jika Rumah A bertetangga dengan Rumah B, maka pasti Rumah B bertetangga dengan Rumah A.</li><br>
-                <li><strong>Relasi Transitif:</strong> Relasi Transitif adalah relasi di mana jika ada rantai hubungan, maka awal rantai tersebut harus berhubungan dengan akhir rantai. Contoh: Jika 10 lebih dari 7, dan 7 lebih dari 3, maka pasti 10 lebih dari 3.</li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="materi-item">
-        <div class="detail">
-            <p>3. Cara Penyajian Relasi</p>
-            <span class="panah">▼</span>
-        </div>
-        <div class="content">
-            <p>Untuk memahami relasi, kita bisa menyajikannya:</p>
-            <ol>
-                <li><strong>Diagram Panah:</strong> Cara ini menyajikan relasi dengan menggunakan dua bentuk (biasanya oval atau kotak) untuk mewakili Himpunan A (daerah asal/Domain) dan Himpunan B (daerah kawan/Kodomain).</li><br>
-                <img src="image/pasngn (1).png" alt=""><br><br>
+     <div class="flex-item">
+     <div class="title-row">
+    <i class="fas fa-lightbulb"></i>
+    <h1>Konsep dasar relasi</h1>
+  </div>
+        <p>Pengertian R (Relasi)
+
+Relasi (R) adalah hubungan antara anggota dua himpunan.
+Relasi menunjukkan pasangan mana saja yang saling berhubungan dari dua himpunan berbeda (atau sama).
+
+Biasanya ditulis sebagai pasangan berurutan dan dilambangkan dengan huruf R.
 
 
-                <li><strong>Himpunan Pasangan Berurutan:</strong> Ditulis sebagai pasangan (a, b), di mana a adalah anggota A dan b adalah anggota B yang berelasi .</li><br>
-                
-                <li><strong>Diagram Kartesius:</strong> Digambarkan pada bidang koordinat, di mana sumbu X adalah himpunan A dan sumbu Y adalah himpunan B.</li><br>
-                <img src="image/pasngn (2).png" alt="">
-            </ol>
-        </div>
+
+
+👉 Catatan penting:
+Tidak semua relasi adalah fungsi.</p>
+
+<p> <span style="color: yellow;  border-bottom: 2px solid rgb(237, 225, 0);
+  padding-bottom: 2px;">Contoh:</span>
+
+Himpunan A = {1, 2, 3}
+
+Himpunan B = {2, 4, 6}
+
+Relasi R = “dikalikan 2”
+Maka:
+R = {(1,2), (2,4), (3,6)}
+
+Artinya:
+1 berelasi dengan 2
+2 berelasi dengan 4
+3 berelasi dengan 6
+
+2. Konsep Relasi
+</p>
+<p>Relasi adalah cara menghubungkan elemen satu himpunan ke himpunan lain berdasarkan aturan tertentu.
+
+Relasi bisa:
+
+satu ke satu
+
+satu ke banyak
+
+banyak ke satu
+
+banyak ke banyak
+
+Contoh relasi dalam kehidupan sehari-hari:
+
+Siswa → mata pelajaran
+
+Anak → orang tua
+
+Negara → ibu kota</p>
+<div class="flex2">
+   <div class="title-row">
+<i class="fa-solid fa-circle-info"></i>
+    <h1>Syarat Penggunaan</h1>
+  </div>
+   <p>Relasi dapat dibentuk jika:
+
+Terdapat dua himpunan (himpunan asal dan himpunan tujuan)
+
+Ada aturan yang menghubungkan anggota kedua himpunan
+
+Hubungan dinyatakan dalam pasangan berurutan (a, b)</p>
+
+   <p>Satu anggota himpunan asal boleh berelasi dengan lebih dari satu anggota himpunan tujuan
+
+Tidak semua anggota himpunan asal harus memiliki pasangan
+
+Relasi bisa dinyatakan dalam:
+
+Diagram panah
+
+Himpunan pasangan berurutan
+
+Grafik Cartesius
+
+Contoh aturan relasi:
+
+“lebih besar dari”
+
+“faktor dari”
+
+“kelipatan dari”
+
+“memiliki hobi yang sama”</p> 
+   </div>
+    <div class="flek3">
+        <div class="title-row">
+     <i class="fa-solid fa-ban"></i>
+    <h1>Aturan Penggunaan</h1>
+  </div>
+        <p>Satu anggota himpunan asal boleh berelasi dengan lebih dari satu anggota himpunan tujuan
+
+Tidak semua anggota himpunan asal harus memiliki pasangan
+
+Relasi bisa dinyatakan dalam:
+
+Diagram panah
+
+Himpunan pasangan berurutan
+
+Grafik Cartesius
+
+Contoh aturan relasi:
+
+“lebih besar dari”
+
+“faktor dari”
+
+“kelipatan dari”
+
+“memiliki hobi yang sama”</p>
+
+
+
+  </div>
+</div>
+
     </div>
- <footer class="poter">
+
+   
+
+   <footer class="poter1">
     <p>© 2025 dibuat oleh kelompok 6</p> <br>
 
     Erdika Dritufanza <br>
     Muhammad Iqbal Patih <br>
     Mita Yuliana
   </footer>
-</main>
-<script>
-    
-    document.addEventListener('DOMContentLoaded', function() {
 
-    
-    // Ambil semua header akordeon yang bisa diklik
-    const headers = document.querySelectorAll('.detail');
 
-    headers.forEach(header => {
-        header.addEventListener('click', function() {
-            // Dapatkan konten yang terkait (element setelah header)
-            const content = this.nextElementSibling;
-            
-            // Dapatkan elemen panah di dalam header
-            const panah = this.querySelector('.panah');
-
-            // Toggle kelas 'active' pada konten untuk menampilkan/menyembunyikan
-            content.classList.toggle('active');
-            
-            // Toggle kelas 'rotate' pada panah untuk memutar ikon
-            panah.classList.toggle('rotate');
-            
-            // Opsional: Tutup akordeon lain yang terbuka saat ini
-            headers.forEach(otherHeader => {
-                if (otherHeader !== header) {
-                    otherHeader.nextElementSibling.classList.remove('active');
-                    otherHeader.querySelector('.panah').classList.remove('rotate');
-                }
-            });
-        });
-    });
-});
-
+  <script>
 function toggleMenu() {
     const link = document.querySelector('.link');
     link.style.display = link.style.display === 'flex' ? 'none' : 'flex';
 }
-
 </script>
 </body>
 </html>
