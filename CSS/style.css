@@ -312,7 +312,7 @@ label{
 }
 
 .flex-item{
-  background: rgba(5, 2, 35, 0.4); /* hitam transparan */
+   background: rgba(2, 0, 14, 0.4);
   backdrop-filter: blur(8px);
   height: 150vh;
   padding: 32px 18px;
